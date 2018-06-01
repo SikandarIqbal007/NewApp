@@ -1,34 +1,39 @@
-//import dependies
 var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var jade = require('jade');
 
-var app = express();
 var upload = multer();
+var app = express();
 
-//get request rendering form (PUG)
-app.get('/', (req,res) => {
 
-    res.render('form');
+app.set('view engine', 'pug');
 
-});
-
-//setting engine to pug
-app.set('view engine','pug');
 app.set('views', './views');
 
-//form data parsing in JSON
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({
-    extended : true
+    extended: true
 }));
 
 app.use(upload.array());
-app.use(express.static('public'));
 
-app.post('/',(req,res) => {
-    console.log(req.body);
-    res.send("recieved your request!");
- });
- app.listen(3000);
+app.use(cookieParser());
+app.use(session({
+    secret: 'shit',
+    name: 'shit',
+    // connect-mongo session store
+    proxy: true,
+    resave: true,
+    saveUninitialized: true
+}));
+
+
+var routers = require('./routes/routers.js');
+
+app.use('/',routers);
+
+
+app.listen(3000);
