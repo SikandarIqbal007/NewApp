@@ -4,7 +4,7 @@ html
    body
       if(message)
          h4 #{message}
-         form(action = "/signup" method = "POST")
-         input(name = "id" type = "text" required placeholder = "User ID")
-         input(name = "password" type = "password" required placeholder = "Password")
-         button(type = "Submit") Sign me up!
+         form(action="/signup", method="POST")
+            input(name = "id")
+            input(name = "password")
+            button(type = "submit") Sign me up!
