@@ -1,7 +1,6 @@
-console.log('shit');
+
  var express = require('express');
-var bodyParser = require('body-parser');
- var multer = require('multer');
+
 // var cookieParser = require('cookie-parser');
 // var session = require('express-session');
 // var jade = require('jade');
@@ -9,7 +8,7 @@ var bodyParser = require('body-parser');
 // var upload = multer();
  var app = express();
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 5000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
