@@ -8,9 +8,9 @@ var bodyParser = require('body-parser');
 
 // var upload = multer();
  var app = express();
-app.get('/', function(req, res){
-    res.send('hello world');
-});
+// app.get('/', function(req, res){
+//     res.send('hello world');
+// });
 
 
 // app.set('view engine', 'pug');
