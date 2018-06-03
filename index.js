@@ -16,6 +16,7 @@
 
 //const express = require('express')
 const PORT = process.env.PORT || 5000
+///var port = process.env.PORT || 8000
 
 //var app = express();
 
@@ -76,4 +77,6 @@ app.use('/',routers);
 
 
 
-app.listen(process.env.PORT || 5000);
+app.listen(PORT, function() {
+    console.log("App is running on port " + PORT);
+});
