@@ -1,16 +1,29 @@
 
- var express = require('express');
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
 
-// var cookieParser = require('cookie-parser');
-// var session = require('express-session');
-// var jade = require('jade');
+express()
+ 
 
-// var upload = multer();
- var app = express();
+  .get('/', (req, res) => res.send('DONE'))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-app.listen(process.env.PORT || 5000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+
+
+
+//  var express = require('express');
+
+// // var cookieParser = require('cookie-parser');
+// // var session = require('express-session');
+// // var jade = require('jade');
+
+// // var upload = multer();
+//  var app = express();
+
+// app.listen(process.env.PORT || 5000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
 
 // app.get('/', function(req, res){
 //     res.send('hello world');
