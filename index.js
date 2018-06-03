@@ -16,10 +16,12 @@
 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var multer = require('multer');
+var bodyParser = require('body-parser');
 var jade = require('jade');
 
 var upload = multer();
- var app = express();
+var app = express();
 
 // app.listen(process.env.PORT || 5000, function(){
 //   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
